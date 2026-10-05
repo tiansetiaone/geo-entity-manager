@@ -1,0 +1,32 @@
+# Go
+backend/.env
+backend/geo-entity-manager
+backend/geo-entity-manager.exe
+backend/bin/
+backend/tmp/
+backend/data/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Docker
+*.pid

@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: geo_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: geo_user
+      POSTGRES_PASSWORD: geo_password
+      POSTGRES_DB: geo_entity_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - geo_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U geo_user -d geo_entity_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  geo_pg_data:
